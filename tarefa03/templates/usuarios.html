@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+</head>
+<body>
+    
+<h1> Dados Alunos INFO3M</h1>
+<ul>
+    {% for usuario in usuarios %}
+    <li> {usuario.nome} - {usuario.matricula} - {usuario.idade} - {usuario.cidade}</li>
+</ul>
+{% endfor %}
+
+</body>
+</html>
