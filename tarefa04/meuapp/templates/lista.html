@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Lista de Tarefas</title>
+
+<style>
+
+table{
+border-collapse: collapse;
+width:70%;
+}
+
+td,th{
+border:1px solid black;
+padding:10px;
+}
+
+.atrasada{
+background:red;
+color:white;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>Lista de Tarefas</h1>
+
+<table>
+
+<tr>
+
+<th>Nome</th>
+
+<th>Status</th>
+
+<th>Prazo</th>
+
+</tr>
+
+{% for tarefa in tarefas %}
+
+<tr class="{% if tarefa.prazo < hoje %}atrasada{% endif %}">
+
+<td>{{ tarefa.nome }}</td>
+
+<td>{{ tarefa.get_status_display }}</td>
+
+<td>{{ tarefa.prazo }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
