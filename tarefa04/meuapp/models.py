@@ -1,6 +1,6 @@
 from django.db import models
 
-class atendimentos(models.Model):
+class Atendimento(models.Model):
 
     STATUS = [
         ("P", "Pendente"),

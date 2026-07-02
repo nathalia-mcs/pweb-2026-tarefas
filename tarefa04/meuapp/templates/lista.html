@@ -26,7 +26,8 @@ color:white;
 </head>
 <body>
 
-<h1>Lista de Tarefas</h1>
+<h1>Atendimentos</h1>
+<h3> Horários marcados para Maquiagem </h3>
 
 <table>
 
@@ -40,15 +41,15 @@ color:white;
 
 </tr>
 
-{% for tarefa in tarefas %}
+{% for atendimento in atendimentos %}
 
-<tr class="{% if tarefa.prazo < hoje %}atrasada{% endif %}">
+<tr class="{% if atendimento.prazo < hoje %}atrasada{% endif %}">
 
-<td>{{ tarefa.nome }}</td>
+    <td>{{ atendimento.nome }}</td>
 
-<td>{{ tarefa.get_status_display }}</td>
+    <td>{{ atendimento.get_status_display }}</td>
 
-<td>{{ tarefa.prazo }}</td>
+    <td>{{ atendimento.prazo }}</td>
 
 </tr>
 
