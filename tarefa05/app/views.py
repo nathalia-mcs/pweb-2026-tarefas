@@ -17,5 +17,3 @@ def post(request, id_post):
     
     return render(request, "app/post.html", context)
 
-def sobre(request):
-    return render(request, "app/posts.html")

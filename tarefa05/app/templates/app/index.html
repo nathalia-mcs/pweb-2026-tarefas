@@ -1,241 +1,55 @@
-{% extends 'app/base.html' %}
+{% extends "app/base.html" %}
+{% load static %}
+
 
 {% block content %}
-        
-        <p class="categoria">All Posts</p>
 
-        <section class="posts">
+<p class="categoria">Publicações</p>
 
-            <!-- POST 1 -->
+<section class="posts">
 
-            <article class="card">
+    {% for post in posts %}
 
-                <img src="" class="foto-post">
+    <article class="card">
 
-                <div class="conteudo">
+        {% if post.imagem %}
+            <img src="{{ post.imagem.url }}" alt="{{ post.titulo }}" class="foto-post">
+        {% endif %}
 
-                    <div class="autor">
+        <div class="conteudo">
 
-                        <img src="" class="perfil">
+            <div class="autor">
 
-                        <div>
+                <img src="{% static 'assets/imgs/perfil.jpeg' %}" class="perfil" alt="Perfil do autor">
 
-                            <strong>Admin</strong>
-
-                            <p>4 de dez. de 2022 • 2 min.</p>
-
-                        </div>
-
-                    </div>
-
-                    <h2>Cozinhando com as crianças</h2>
-
-                    <p class="descricao">
-                        Crie um subtítulo para o post no blog que resume numa frase curta e atraente o seu conteúdo.
-                    </p>
-
-                    <div class="rodape">
-                        <span>37 visualizações</span>
-                        <span>0 comentário</span>
-                    </div>
-
+                <div>
+                    <strong>Nathalia Cordeiro</strong>
+                    <p>{{ post.data_publicacao|date:"d \\d\\e M. \\d\\e Y" }}</p>
                 </div>
 
-            </article>
+            </div>
 
+            <h2>
+                <a href="{% url 'post' post.id %}">
+                    {{ post.titulo }}
+                </a>
+            </h2>
 
-            <!-- POST 2 -->
+            <p class="descricao">
+                {{ post.texto }}
+            </p>
 
-            <article class="card">
+            <div class="rodape">
+                <span>37 visualizações</span>
+                <span>0 comentários</span>
+            </div>
 
-                <img src="" class="foto-post">
+        </div>
 
-                <div class="conteudo">
+    </article>
 
-                    <div class="autor">
+    {% endfor %}
 
-                        <img src="" class="perfil">
+</section>
 
-                        <div>
-
-                            <strong>Admin</strong>
-
-                            <p>4 de dez. de 2022 • 1 min.</p>
-
-                        </div>
-
-                    </div>
-
-                    <h2>Uma pintura de dia chuvoso</h2>
-
-                    <p class="descricao">
-                        Crie um subtítulo para o post no blog que resume numa frase curta e atraente o seu conteúdo.
-                    </p>
-
-                    <div class="rodape">
-                        <span>20 visualizações</span>
-                        <span>0 comentário</span>
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- POST 3 -->
-
-            <article class="card">
-
-                <img src="" class="foto-post">
-
-                <div class="conteudo">
-
-                    <div class="autor">
-
-                        <img src="" class="perfil">
-
-                        <div>
-
-                            <strong>Admin</strong>
-
-                            <p>4 de dez. de 2022 • 2 min.</p>
-
-                        </div>
-
-                    </div>
-
-                    <h2>Decorando quarto infantil</h2>
-
-                    <p class="descricao">
-                        Crie um subtítulo para o post no blog que resume numa frase curta e atraente o seu conteúdo.
-                    </p>
-
-                    <div class="rodape">
-                        <span>14 visualizações</span>
-                        <span>0 comentário</span>
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- POST 4 -->
-
-            <article class="card">
-
-                <img src="" class="foto-post">
-
-                <div class="conteudo">
-
-                    <div class="autor">
-
-                        <img src="" class="perfil">
-
-                        <div>
-
-                            <strong>Admin</strong>
-
-                            <p>4 de dez. de 2022 • 2 min.</p>
-
-                        </div>
-
-                    </div>
-
-                    <h2>Conheça nossa família</h2>
-
-                    <p class="descricao">
-                        Crie um subtítulo para o post no blog que resume numa frase curta e atraente o seu conteúdo.
-                    </p>
-
-                    <div class="rodape">
-                        <span>15 visualizações</span>
-                        <span>0 comentário</span>
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- POST 5 -->
-
-            <article class="card">
-
-                <img src="" class="foto-post">
-
-                <div class="conteudo">
-
-                    <div class="autor">
-
-                        <img src="" class="perfil">
-
-                        <div>
-
-                            <strong>Admin</strong>
-
-                            <p>4 de dez. de 2022 • 1 min.</p>
-
-                        </div>
-
-                    </div>
-
-                    <h2>Um dia no zoológico</h2>
-
-                    <p class="descricao">
-                        Crie um subtítulo para o post no blog que resume numa frase curta e atraente o seu conteúdo.
-                    </p>
-
-                    <div class="rodape">
-                        <span>13 visualizações</span>
-                        <span>0 comentário</span>
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- POST 6 -->
-
-            <article class="card">
-
-                <img src="" class="foto-post">
-
-                <div class="conteudo">
-
-                    <div class="autor">
-
-                        <img src="" class="perfil">
-
-                        <div>
-
-                            <strong>Admin</strong>
-
-                            <p>4 de dez. de 2022 • 2 min.</p>
-
-                        </div>
-
-                    </div>
-
-                    <h2>Atividades de sábado durante o verão</h2>
-
-                    <p class="descricao">
-                        Crie um subtítulo para o post no blog que resume numa frase curta e atraente o seu conteúdo.
-                    </p>
-
-                    <div class="rodape">
-                        <span>10 visualizações</span>
-                        <span>0 comentário</span>
-                    </div>
-
-                </div>
-
-            </article>
-
-        </section>
-
-
-</body>
-</html>
 {% endblock %}

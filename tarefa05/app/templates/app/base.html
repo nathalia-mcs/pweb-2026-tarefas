@@ -13,10 +13,13 @@
 </head>
 <body>
 
+    <header>
+        <img src="{% static 'assets/imgs/capaHeader.png' %}"class="capaHeader">
+    </header>
+
     <nav>
         <div class="menu">
             <a href="{% url 'index' %}">Início</a>
-            <a href="{% url 'sobre' %}">Sobre</a>
         </div>
     </nav>
 
@@ -24,6 +27,24 @@
         {% block content %}
         {% endblock %}
     </main>
+
+    <footer class="footer">
+
+    <div class="footer-instagram">
+
+        <a href="https://www.instagram.com/nahcordeiroc?igsh=MThvMnY4NjV0bzBrNA%3D%3D&utm_source=qr" target="_blank">
+
+            <img src="{% static 'assets/imgs/instagram.png' %}"class="instagram-icon">
+
+        </a>
+
+        <div class="footer-texto">
+            <p><img src="{% static 'assets/imgs/simbolo-de-copyright.png' %}"class="copy-icon">2026  por Nathalia Cordeiro</p>
+        </div>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
