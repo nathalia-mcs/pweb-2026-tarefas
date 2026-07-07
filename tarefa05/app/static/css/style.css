@@ -207,3 +207,436 @@ height:60px;
 .capaHeader{
     height: 425px;
 }
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Roboto',sans-serif;
+    background:#f7f7f7;
+    color:#444;
+}
+
+nav{
+    width:100%;
+    height:50px;
+    background:#ef5668;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.menu{
+    display:flex;
+    gap:30px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+    font-size:13px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    opacity:.8;
+}
+
+main{
+    width:1100px;
+    max-width:95%;
+    margin:20px auto;
+}
+
+.categoria{
+    color:#e98d97;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.posts{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+
+}
+
+.card{
+
+    background:white;
+    border:1px solid #d5d5d5;
+
+}
+
+.foto-post{
+
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    display:block;
+    background:#ddd;
+
+}
+
+.conteudo{
+
+    padding:15px;
+
+}
+
+.autor{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:15px;
+
+}
+
+.perfil{
+
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:#ccc;
+    object-fit:cover;
+
+}
+
+.autor strong{
+
+    font-size:12px;
+    display:block;
+
+}
+
+.autor p{
+
+    font-size:11px;
+    color:#777;
+
+}
+
+h2{
+
+    font-size:34px;
+    font-family:Georgia, serif;
+    font-weight:400;
+    line-height:1.2;
+    margin-bottom:15px;
+    color:#444;
+
+}
+
+.descricao{
+
+    font-size:14px;
+    color:#555;
+    line-height:1.7;
+    margin-bottom:25px;
+
+}
+
+.rodape{
+
+    display:flex;
+    gap:20px;
+    font-size:11px;
+    color:#777;
+    border-top:1px solid #eee;
+    padding-top:12px;
+
+}
+
+@media(max-width:1000px){
+
+.posts{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:700px){
+
+.posts{
+
+grid-template-columns:1fr;
+
+}
+
+nav{
+
+height:60px;
+
+}
+
+}
+
+.footer{
+    background: #ffffff;
+    padding: 20px 40px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-instagram{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.instagram-icon{
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.copy-icon{
+    width: 10px;
+    height: 10px;
+    object-fit: contain;
+}
+
+.footer-texto{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-texto p{
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.capaHeader{
+    height: 425px;
+}
+
+/* ==========================
+   PÁGINA DO POST
+========================== */
+
+.post-detalhe{
+    width: 90%;
+    max-width: 1400px;
+    margin: 60px auto;
+}
+
+/* Card */
+
+.card-post-detail{
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 70px;
+
+    padding: 35px;
+
+    background: #0b7c98;
+
+    border: 2px solid rgba(255,255,255,.35);
+
+    overflow: hidden;
+}
+
+/* Linhas superior e inferior */
+
+.card-post-detail::before,
+.card-post-detail::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+
+    height: 2px;
+
+    background: rgba(255,255,255,.25);
+}
+
+.card-post-detail::before{
+    top: 18px;
+}
+
+.card-post-detail::after{
+    bottom: 18px;
+}
+
+/* Linhas laterais */
+
+.post-detalhe::before,
+.post-detalhe::after{
+
+    content: "";
+
+    position: absolute;
+}
+
+/* Imagem */
+
+.foto-post-detail{
+    width: 420px;
+    height: 420px;
+
+    object-fit: cover;
+
+    border: 10px solid #f3c8d6;
+
+    flex-shrink: 0;
+}
+
+/* Conteúdo */
+
+.conteudo-detail{
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+/* Título */
+
+.conteudo-detail h1{
+
+    color: white;
+
+    font-size: 46px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
+
+    font-weight: 300;
+}
+/* Barras decorativas */
+
+.linha-detail{
+
+    width: 180px;
+    height: 8px;
+
+    background: rgba(255,255,255,.18);
+
+    border-radius: 30px;
+
+    margin-bottom: 12px;
+}
+
+.menor-detail{
+
+    width: 140px;
+
+    margin-bottom: 45px;
+}
+
+/* Texto */
+
+.texto-detail{
+
+    color: white;
+
+    font-size: 21px;
+
+    line-height: 2;
+
+    text-align: justify;
+
+    max-width: 650px;
+
+    margin-top: 15px;
+}
+
+/* Linhas verticais ao redor do texto */
+
+.conteudo-detail{
+
+    position: relative;
+}
+
+.conteudo-detail::before,
+.conteudo-detail::after{
+
+    content: "";
+
+    position: absolute;
+
+    top: -35px;
+    bottom: -35px;
+
+    width: 2px;
+
+    background: rgba(255,255,255,.20);
+}
+
+.conteudo-detail::before{
+
+    left: -35px;
+}
+
+.conteudo-detail::after{
+
+    right: -35px;
+}
+
+/* Responsivo */
+
+@media (max-width: 950px){
+
+.card-post-detail{
+
+    display: flex;
+    align-items: center;
+
+    gap: 45px;
+}
+    .foto-post-detail{
+
+        width: 100%;
+        max-width: 380px;
+
+        height: 500px;
+    }
+
+    .conteudo-detail h1{
+
+        font-size: 32px;
+    }
+
+    .texto-detail{
+
+        font-size: 17px;
+    }
+
+    .conteudo-detail::before,
+    .conteudo-detail::after{
+
+        display: none;
+    }
+}
+body{
+    background:red !important;
+}

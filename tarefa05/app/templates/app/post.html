@@ -1,6 +1,31 @@
-{% extends 'app/base.html' %}
+{% extends "app/base.html" %}
+{% load static %}
 
 {% block content %}
 
+<section class="post-detalhe">
+
+    <article class="card-post-detail">
+
+        {% if post.imagem %}
+            <img src="{{ post.imagem.url }}" class="foto-post-detail" alt="{{ post.titulo }}">
+        {% endif %}
+
+        <div class="conteudo-detail">
+
+            <h1>{{ post.titulo }}</h1>
+
+            <div class="linha-detail"></div>
+            <div class="linha-detail menor-detail"></div>
+
+            <p class="texto-detail">
+                {{ post.texto }}
+            </p>
+
+        </div>
+
+    </article>
+
+</section>
 
 {% endblock %}
